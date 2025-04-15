@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Lovers Quarrel", serif;
+  background: url("poetbg2.png") no-repeat center center fixed;
+  background-size: cover;
+  color: #3e2f1c;
+  line-height: 1.6;
+}
+
+.letter {
+  max-width: 800px;
+  margin: 5vh auto;
+  background-color: rgba(255, 250, 240, 0.5);
+  padding: 40px;
+  /* border-radius: 12px; */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.title {
+  font-family: "Comforter", cursive;
+  font-size: 2.5em;
+  font-weight: normal;
+  /* text-align: center; */
+  margin-bottom: 30px;
+  white-space: pre-wrap;
+}
+
+.paragraph {
+  font-size: 2.1em;
+  margin-bottom: 20px;
+  white-space: pre-wrap;
+}
+
+.animated-text span {
+  display: inline-block;
+  opacity: 0;
+  animation: appear 0.1s forwards;
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
+  }
+}
+
+.signature {
+  font-family: "Lavishly Yours", cursive;
+  font-size: 2em;
+  text-align: right;
+  margin-top: 40px;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 600px) {
+  .letter {
+    padding: 20px;
+    margin: 2vh 10px;
+  }
+}
