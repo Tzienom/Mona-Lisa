@@ -19,7 +19,7 @@ img {
   background-color: rgba(255, 250, 240, 0.5);
   padding: 40px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-  position: relative;
+  /* position: relative; */
 }
 
 .title {
@@ -38,13 +38,13 @@ img {
   font-size: 2.5rem;
   font-weight: normal;
   margin-bottom: 1.875rem;
-  white-space: pre-wrap;
+  /* white-space: pre-wrap; */
 }
 
 .paragraph {
-  font-size: 2.1em;
+  font-size: 2.3rem;
   margin-bottom: 20px;
-  white-space: pre-wrap;
+  /* white-space: nowrap; */
 }
 
 .animated-text span {
@@ -64,13 +64,13 @@ img {
   font-size: 2em;
   text-align: right;
   margin-top: 40px;
-  white-space: pre-wrap;
+  /* white-space: pre-wrap; */
 }
 
 @media (max-width: 600px) {
   .letter {
     padding: 20px;
-    margin: 3.5rem 0.625rem;
+    margin: 3.5rem 2rem;
   }
 
   .title {
