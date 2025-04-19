@@ -103,12 +103,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const audio = document.getElementById("mona-audio");
+  audio.muted = false;
   audio.volume = 0.1;
 });
 
 document.addEventListener("contextmenu", function (e) {
   e.preventDefault();
-  // alert("Pardon, but this parchment is sacred and not to be unsealed.");
 });
 
 document.addEventListener("keydown", function (e) {
