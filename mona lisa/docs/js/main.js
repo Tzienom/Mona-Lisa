@@ -120,11 +120,24 @@ window.addEventListener("load", () => {
 
       animateSequence();
 
+      const audio = document.querySelector("#mona-audio");
+
+      audio.muted = false;
       const playPromise = audio.play();
-      if (playPromise != undefined) {
+
+      // if (playPromise != undefined) {
+      //   playPromise
+      //     .then(() => console.log("Audio playing."))
+      //     .catch((err) => console.log("Audio play failed:", err));
+      // }
+      if (playPromise !== undefined) {
         playPromise
-          .then(() => console.log("Audio playing."))
-          .catch((err) => console.log("Audio play failed:", err));
+          .then(() => {
+            console.log("Audio is playing.");
+          })
+          .catch((error) => {
+            console.error("Cannot play audio: ", error);
+          });
       }
     }, 1500);
   }
