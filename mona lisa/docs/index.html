@@ -15,25 +15,63 @@
     <title>Mona Lisa</title>
   </head>
   <body>
-    <div class="title-wrapper">
-      <h1 class="title"></h1>
-    </div>
-    <div class="letter-container">
-      <div class="letter">
-        <h2 class="subtitle"></h2>
-        <p class="paragraph paragraph-1"></p>
-        <p class="paragraph paragraph-2"></p>
-        <p class="paragraph paragraph-3"></p>
-        <p class="paragraph paragraph-4"></p>
-        <p class="paragraph paragraph-5"></p>
-        <p class="signature signature-1"></p>
-        <p class="signature signature-2"></p>
-        <!-- <img src="images/signature.jpg" alt="Sir Gabriel's Signature" /> -->
+    <div id="musings-section" class="musings-scroll">
+      <p class="musings-text">
+        I know not yet the timbre of your voice, <br />
+        Nor the laughter that lingers on your lips, Yet something in the
+        wind—<br />
+        A fleeting whisper I long to obey—<br />
+        Has bid my pen set sail upon your ships.<br /><br />
+
+        I do not know if you delight in words crafted in care, <br />
+        Nor if poetry stirs your heart as it does mine, <br />
+        Yet, should you allow me the latitude of composing words of poetry for
+        you, <br />
+        I shall leave you a verse here now and then—<br />
+        Mere musings, woven without expectation, Save that they bring a smile to
+        your day.<br /><br />
+
+        Tell me, do words move you?<br /><br />
+
+        <span class="musings-signature">— Gabriel</span>
+      </p>
+
+      <div class="musings-buttons">
+        <button id="yes-btn">Yes</button>
+        <button id="no-btn">No</button>
       </div>
-      <audio autoplay loop id="mona-audio">
-        <source src="audio/Our Love.mp3" type="audio/mpeg" />
-        Your browser does not support the audio element.
-      </audio>
+
+      <div id="no-notification">
+        <p>
+          Very well, then. Perhaps another time, when your heart is inclined to
+          poetry.
+        </p>
+      </div>
+    </div>
+
+    <div id="mona-lisa-section" class="hidden">
+      <div class="title-wrapper">
+        <h1 class="title"></h1>
+      </div>
+
+      <div class="letter-container">
+        <div class="letter">
+          <h2 class="subtitle"></h2>
+          <p class="paragraph paragraph-1"></p>
+          <p class="paragraph paragraph-2"></p>
+          <p class="paragraph paragraph-3"></p>
+          <p class="paragraph paragraph-4"></p>
+          <p class="paragraph paragraph-5"></p>
+          <p class="signature signature-1"></p>
+          <p class="signature signature-2 signature-glint"></p>
+          <!-- <img src="images/signature.jpg" alt="Sir Gabriel's Signature" /> -->
+        </div>
+
+        <audio autoplay loop id="mona-audio">
+          <source src="audio/Our Love.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+      </div>
     </div>
 
     <script src="js/main.js"></script>

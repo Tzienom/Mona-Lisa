@@ -4,24 +4,81 @@ body {
   font-family: "Lovers Quarrel", serif;
   background: url("../images/poetbg2.png") no-repeat center center fixed;
   background-size: cover;
+  /* background-color: #bfa27a; */
   color: #1b0e00;
   line-height: 1.6;
+
+  /* animation: drift 60s linear infinite; */
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.musings-scroll {
+  animation: pulse 2s infinite;
+  transition: opacity 1.5s ease;
+}
+
+.musings-scroll.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.musings-text {
+  color: white;
+  font-size: 2.3rem;
+  font-family: "Stalemate";
+}
+
+#musings-section {
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+#yes-btn,
+#no-btn {
+  margin-top: 20px;
+  margin-inline: 10px;
+  padding: 8px 20px;
+  font-size: 1.5rem;
+  font-family: "comforter", serif;
+  cursor: pointer;
+  border: none;
+  background-color: #d2b48c;
+  color: white;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+#yes-btn:hover,
+#no-btn:hover {
+  background-color: #bfa27a;
+}
+
+#no-notification {
+  position: fixed;
+  bottom: 50vh;
+  max-width: 400px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  font-family: "Eagle Lake", serif;
+  font-size: 1rem;
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+  pointer-events: none;
+  z-index: 9999;
 }
 
 img {
   max-width: 100%;
   width: 100px;
 }
-
-/* .letter-container {
-  height: 100px;
-  overflow: hidden;
-}
-
-.letter-container.revealed {
-  height: 3000px;
-  transition: max-height 2s ease-in-out;
-} */
 
 .letter {
   max-width: 800px;
@@ -54,16 +111,9 @@ img {
   margin-bottom: 20px;
 }
 
-.animated-text span {
-  display: inline-block;
-  opacity: 0;
-  animation: appear 0.1s forwards;
-}
-
-@keyframes appear {
-  to {
-    opacity: 1;
-  }
+.musings-signature {
+  text-align: right;
+  display: block;
 }
 
 .signature {
@@ -71,5 +121,58 @@ img {
   font-size: 2em;
   text-align: right;
   margin-top: 40px;
-  /* white-space: pre-wrap; */
+}
+
+.faded-in {
+  opacity: 0;
+  filter: blur(2px);
+  transition: opacity 1.6s ease, filter 1.6s ease;
+}
+
+.faded-in.visible {
+  opacity: 1;
+  filter: blur(0px);
+}
+
+.signature-glint {
+  position: relative;
+  overflow: hidden;
+}
+
+.signature-glint::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  transform: skewX(-25deg);
+  animation: glint 1s ease-in-out 1;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.01);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes glint {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
 }

@@ -28,4 +28,8 @@
     /* text-align: center; */
     display: inline-block;
   }
+
+  #musings-section {
+    margin: 2rem 1.5rem;
+  }
 }

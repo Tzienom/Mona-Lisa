@@ -51,22 +51,6 @@ window.addEventListener("load", () => {
     },
   ];
 
-  // function typeText({ selector, text, speed }, onComplete) {
-  //   const element = document.querySelector(selector);
-  //   if (!element) return;
-
-  //   let index = 0;
-  //   element.innerHTML = "";
-
-  //   const interval = setInterval(() => {
-  //     element.innerHTML += text[index++];
-
-  //     if (index >= text.length) {
-  //       clearInterval(interval);
-  //       setTimeout(onComplete, delayBetweenElements);
-  //     }
-  //   }, speed);
-  // }
   function typeText({ selector, text, speed }, onComplete) {
     const element = document.querySelector(selector);
     if (!element) return;
@@ -82,7 +66,6 @@ window.addEventListener("load", () => {
 
         let delay = speed;
 
-        // Add natural pauses after punctuation
         switch (char) {
           case ",":
             delay = 200;
@@ -108,7 +91,6 @@ window.addEventListener("load", () => {
             break;
         }
 
-        // If an ellipsis is typed, increase delay
         if (text.slice(i - 3, i) === "...") delay = 500;
 
         setTimeout(typeChar, delay);
@@ -117,7 +99,7 @@ window.addEventListener("load", () => {
       }
     }
 
-    typeChar(); // Commence the typing
+    typeChar();
   }
 
   function animateSequence(index = 0) {
@@ -125,27 +107,41 @@ window.addEventListener("load", () => {
     typeText(typingQueue[index], () => animateSequence(index + 1));
   }
 
-  setTimeout(() => animateSequence(), 2000);
+  function revealMonaLisa() {
+    const musings = document.getElementById("musings-section");
+    const monaSection = document.getElementById("mona-lisa-section");
 
-  const audio = document.querySelector("#mona-audio");
-  // audio.volume = 0.1;
+    musings.classList.add("fade-out");
 
-  const attemptPlay = () => {
-    audio.muted = false;
-    const playPromise = audio.play();
+    setTimeout(() => {
+      musings.style.display = "none";
+      monaSection.classList.remove("hidden");
+      monaSection.style.opacity = "1";
 
-    if (playPromise !== undefined) {
-      playPromise
-        .then(() => {
-          console.log("Audio is now playing");
-        })
-        .catch((error) => {
-          console.log("Autoplay prevented: ", error);
-        });
-    }
-  };
+      animateSequence();
 
-  attemptPlay();
+      const playPromise = audio.play();
+      if (playPromise != undefined) {
+        playPromise
+          .then(() => console.log("Audio playing."))
+          .catch((err) => console.log("Audio play failed:", err));
+      }
+    }, 1500);
+  }
+
+  document.getElementById("yes-btn").addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    revealMonaLisa();
+  });
+
+  document.getElementById("no-btn").addEventListener("click", () => {
+    const notification = document.getElementById("no-notification");
+    notification.style.opacity = "1";
+
+    setTimeout(() => {
+      notification.style.opacity = "0";
+    }, 4000);
+  });
 });
 
 document.addEventListener("contextmenu", function (e) {
