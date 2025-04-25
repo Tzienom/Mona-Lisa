@@ -15,11 +15,11 @@ img {
 
 .letter {
   max-width: 800px;
+  min-height: 100vh;
   margin: 3.5rem auto;
   background-color: rgba(255, 250, 240, 0.5);
   padding: 40px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-  /* position: relative; */
+  box-shadow: 0 0 30px #0000004d;
 }
 
 .title {
@@ -30,7 +30,6 @@ img {
   z-index: -10;
   margin-left: 2rem;
   color: #3e2f1c;
-  /* background: #bfa76f; */
 }
 
 .subtitle {
@@ -38,13 +37,11 @@ img {
   font-size: 2.5rem;
   font-weight: normal;
   margin-bottom: 1.875rem;
-  /* white-space: pre-wrap; */
 }
 
 .paragraph {
   font-size: 2.3rem;
   margin-bottom: 20px;
-  /* white-space: nowrap; */
 }
 
 .animated-text span {
@@ -65,16 +62,4 @@ img {
   text-align: right;
   margin-top: 40px;
   /* white-space: pre-wrap; */
-}
-
-@media (max-width: 600px) {
-  .letter {
-    padding: 20px;
-    margin: 3.5rem 2rem;
-  }
-
-  .title {
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
