@@ -128,7 +128,7 @@ window.addEventListener("load", () => {
   setTimeout(() => animateSequence(), 2000);
 
   const audio = document.querySelector("#mona-audio");
-  audio.volume = 0.1;
+  // audio.volume = 0.1;
 
   const attemptPlay = () => {
     audio.muted = false;
