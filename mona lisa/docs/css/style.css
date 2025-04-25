@@ -13,6 +13,16 @@ img {
   width: 100px;
 }
 
+/* .letter-container {
+  height: 100px;
+  overflow: hidden;
+}
+
+.letter-container.revealed {
+  height: 3000px;
+  transition: max-height 2s ease-in-out;
+} */
+
 .letter {
   max-width: 800px;
   min-height: 100vh;
