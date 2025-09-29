@@ -13,6 +13,12 @@
     <link rel="stylesheet" href="queries/queries.css" />
     <link rel="icon" href="images/heart.png" type="image/png" />
     <title>Mona Lisa</title>
+    <style>
+      /* Critical CSS for font loading - prevents FOIT/FOUT layout shifts */
+      body {
+        font-display: swap;
+      }
+    </style>
   </head>
   <body>
     <div id="musings-section" class="musings-scroll">
@@ -51,20 +57,37 @@
 
     <div id="mona-lisa-section" class="hidden">
       <div class="title-wrapper">
-        <h1 class="title"></h1>
+        <h1 class="title" aria-label="Mona Lisa"></h1>
       </div>
 
       <div class="letter-container">
         <div class="letter">
-          <h2 class="subtitle"></h2>
-          <p class="paragraph paragraph-1"></p>
-          <p class="paragraph paragraph-2"></p>
-          <p class="paragraph paragraph-3"></p>
-          <p class="paragraph paragraph-4"></p>
-          <p class="paragraph paragraph-5"></p>
-          <p class="signature signature-1"></p>
-          <p class="signature signature-2 signature-glint"></p>
-          <!-- <img src="images/signature.jpg" alt="Sir Gabriel's Signature" /> -->
+          <h2 class="subtitle" aria-label="My Dearest Chinyere"></h2>
+          <p
+            class="paragraph paragraph-1"
+            aria-label="Letter content paragraph 1"
+          ></p>
+          <p
+            class="paragraph paragraph-2"
+            aria-label="Letter content paragraph 2"
+          ></p>
+          <p
+            class="paragraph paragraph-3"
+            aria-label="Letter content paragraph 3"
+          ></p>
+          <p
+            class="paragraph paragraph-4"
+            aria-label="Letter content paragraph 4"
+          ></p>
+          <p
+            class="paragraph paragraph-5"
+            aria-label="Letter content paragraph 5"
+          ></p>
+          <p class="signature signature-1" aria-label="Closing"></p>
+          <p
+            class="signature signature-2 signature-glint"
+            aria-label="Signature"
+          ></p>
         </div>
 
         <audio loop id="mona-audio">
@@ -75,6 +98,5 @@
     </div>
 
     <script src="js/main.js"></script>
-    <!-- <script src="js/test.js"></script> -->
   </body>
 </html>

@@ -4,11 +4,39 @@ body {
   font-family: "Lovers Quarrel", serif;
   background: url("../images/poetbg2.png") no-repeat center center fixed;
   background-size: cover;
-  /* background-color: #bfa27a; */
   color: #1b0e00;
   line-height: 1.6;
+}
 
-  /* animation: drift 60s linear infinite; */
+/* Prevent layout shift during font loading */
+@font-face {
+  font-family: "Lovers Quarrel";
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Stalemate";
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Comforter";
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fascinate Inline";
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lavishly Yours";
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Eagle Lake";
+  font-display: swap;
 }
 
 .hidden {
@@ -78,6 +106,7 @@ body {
 img {
   max-width: 100%;
   width: 100px;
+  height: auto; /* Prevent layout shift */
 }
 
 .letter {
@@ -97,6 +126,8 @@ img {
   z-index: -10;
   margin-left: 2rem;
   color: #3e2f1c;
+  /* Reserve space to prevent layout shift */
+  min-height: 4.2rem; /* Approximately the height of the title */
 }
 
 .subtitle {
@@ -104,11 +135,27 @@ img {
   font-size: 2.5rem;
   font-weight: normal;
   margin-bottom: 1.875rem;
+  /* Reserve space to prevent layout shift */
+  min-height: 3rem;
 }
 
 .paragraph {
   font-size: 2.3rem;
   margin-bottom: 20px;
+  /* Reserve minimum space for content - prevents major shifts */
+  min-height: 2.76rem; /* One line height */
+}
+
+/* Specific height reservations for longer paragraphs */
+.paragraph-1,
+.paragraph-2,
+.paragraph-3 {
+  min-height: 25rem; /* Approximate height for long paragraphs */
+}
+
+.paragraph-4,
+.paragraph-5 {
+  min-height: 10rem; /* Approximate height for shorter paragraphs */
 }
 
 .musings-signature {
@@ -121,6 +168,8 @@ img {
   font-size: 2em;
   text-align: right;
   margin-top: 40px;
+  /* Reserve space to prevent layout shift */
+  min-height: 2.4rem;
 }
 
 .faded-in {
@@ -175,4 +224,19 @@ img {
   100% {
     left: 125%;
   }
+}
+
+/* Prevent cumulative layout shift from animations */
+* {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Ensure smooth rendering */
+.letter-container {
+  will-change: auto;
+}
+
+#mona-lisa-section {
+  contain: layout style paint;
 }
