@@ -163,16 +163,16 @@ document.addEventListener("contextmenu", function (e) {
 
 document.addEventListener("keydown", function (e) {
   // Prevent F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U, Ctrl+S, Ctrl+C, Ctrl+P, Ctrl+A
-  // if (
-  //   e.keyCode === 123 || // F12
-  //   (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) || // Ctrl+Shift+I or J
-  //   (e.ctrlKey &&
-  //     (e.keyCode === 85 ||
-  //       e.keyCode === 83 ||
-  //       e.keyCode === 67 ||
-  //       e.keyCode === 80 ||
-  //       e.keyCode === 65)) // Ctrl+U, S, C, P, A
-  // ) {
-  //   e.preventDefault();
-  // }
+  if (
+    e.keyCode === 123 || // F12
+    (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) || // Ctrl+Shift+I or J
+    (e.ctrlKey &&
+      (e.keyCode === 85 ||
+        e.keyCode === 83 ||
+        e.keyCode === 67 ||
+        e.keyCode === 80 ||
+        e.keyCode === 65)) // Ctrl+U, S, C, P, A
+  ) {
+    e.preventDefault();
+  }
 });
